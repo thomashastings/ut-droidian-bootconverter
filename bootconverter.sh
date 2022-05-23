@@ -35,5 +35,7 @@ echo ""
 
 # Putting the new bootimage back
 mv $OUTFILE $DIR
+# Cleanup temporary directory
+rm -r $TEMP
 echo "Droidian boot image created as $OUTFILE"
 exit 0
