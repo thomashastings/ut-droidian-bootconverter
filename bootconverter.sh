@@ -27,7 +27,7 @@ abootimg -x $1
 echo ""
 
 # Making the change
-sed -i -e "/systempart=\/dev\/disk\/by-partlabel\/system/d" bootimg.cfg
+sed '/^cmdline/ s: systempart=/dev/disk/by-partlabel/system::' -i bootimg.cfg
 
 # Creating new bootimage
 abootimg --create $OUTFILE -f bootimg.cfg -k zImage -r initrd.img
